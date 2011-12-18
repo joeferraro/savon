@@ -30,6 +30,7 @@ module Savon
     #     wsdl.namespace = "http://users.example.com"
     #   end
     def initialize(&block)
+      puts "THIS IS A TEST"
       process 1, &block if block
       wsdl.request = http
     end
