@@ -29,12 +29,12 @@ module Savon
     #     wsdl.endpoint = "http://example.com/UserService"
     #     wsdl.namespace = "http://users.example.com"
     #   end
-    def initialize(wsdl_path)
-      wsdl.document = File.expand_path(wsdl_path)
+    def initialize(&block)
+      process 1, &block if block
       wsdl.request = http
     end
     
-    def initialize_old(wsdl_document = nil, &block)
+    def initialize_original(wsdl_document = nil, &block)
       wsdl.document = wsdl_document if wsdl_document
       process 1, &block if block
       wsdl.request = http
