@@ -29,9 +29,7 @@ module Savon
     #     wsdl.endpoint = "http://example.com/UserService"
     #     wsdl.namespace = "http://users.example.com"
     #   end
-    def initialize(&block)
-      puts "THIS IS A TEST"
-      process 1, &block if block
+    def initialize
       wsdl.request = http
     end
     
